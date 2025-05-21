@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kohd Translator</title>
+  <script>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-4">
+  <h1 class="text-3xl mb-6">Kohd Language Translator</h1>
+  <form method="post" class="mb-6">
+    <input name="sentence" class="text-black p-2 rounded" placeholder="Enter a word or sentence..." />
+    <button type="submit" class="bg-blue-500 hover:bg-blue-700 p-2 rounded text-white ml-2">Translate</button>
+</form>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    {% for image in images %}
+      <img src="{{ image }}" class="w-32 h-32 object-contain" />
+    {% endfor %}
+  </div>
+</body>
+</html>
